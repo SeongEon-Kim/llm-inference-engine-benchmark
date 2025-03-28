@@ -3,7 +3,7 @@
 최근의 LLM 환경에서는 모델 자체보다 **어떻게 빠르고 효율적으로 서빙할 것인가**가 점점 더 중요한 문제가 되고 있습니다.  
 **추론 속도, 응답 시간, GPU 효율성**을 기준으로 여러 오픈소스를 비교하였습니다.
 
----
+
 
 ## 실험 환경
 
@@ -18,29 +18,29 @@
 > 실험은 동일한 입력 조건, 동일한 프롬프트, 동일한 하드웨어 리소스에서 수행하였습니다.  
 > 프롬프트는 실제 서비스에서 사용할 법한 다양한 길이와 복잡도를 갖도록 구성하였습니다.
 
----
+
 
 ## 측정 지표 (Performance Metrics)
 
-### 1.TTFT (Time To First Token)
+### 1. TTFT (Time To First Token)
 
 - 모델이 첫 토큰을 응답하기까지 걸리는 시간 (초).
 - 실사용 시 사용자 체감 속도에 가장 직접적인 영향을 줍니다.
 - warm-up 시간 포함.
 
-### 2.TPS (Tokens Per Second)
+### 2. TPS (Tokens Per Second)
 
 - 전체 토큰 처리 속도:  
   `TPS = (Input Tokens + Output Tokens) / Total Time`
 
-### 3.GPU Usage
+### 3. GPU Usage
 
 - **Volatile GPU Utilization (%)**  
   모델이 얼마나 GPU 자원을 활용하고 있는지 측정 (peak, 평균, p90 기준).
 - **GPU Memory Usage (MB)**  
   모델 로딩 시 기본 점유 메모리, 생성 중 peak 메모리 사용량 측정.
 
----
+
 
 ## 테스트 Runtime 목록
 
@@ -50,7 +50,7 @@
 | tensorRT-LLM    |     |      |                  |               |        |            |
 | vllm            |     |      |                  |               |        |            |
 
----
+
 
 ## 테스트 구성
 
